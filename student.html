@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEDBACK FORM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body{font-family: 'Comic Neue', cursive;}
+   div.feedback{
+    background-image: linear-gradient(#43cea2,#185a9d);padding: 100px;padding-left:600px;
+    }
+</style>
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
+<body>
+    <div class="coantainer-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+            <h2 class="text-primary" id="wmsg"></h2> 
+            <ul class="nav navbar">
+                <li><button  onclick="signOut()" style=" margin-left: 1220px; padding: 12px;" type="button" class="btn btn-primary"><i class="fa fa-sign-out" style="font-size:25px;float: right;color:whitesmoke"></i>Sign Out&emsp;</button></li>
+            </ul>
+            </nav> 
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title" style="color: red;">Instructions to the students</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p class="text text-primary">
+                  1.No field should be left empty except additional feedback section.
+                  <br>
+                  2.Feed back will be available in range of 1-5.
+                  <br><br>
+                  5-Excellent 4-Very Good 3-Good 2-Average 1-Below Average
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Yes, I Understand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="feedback">
+        <div class="form-group">
+            <label for="DCCN">FACULTY (DCCN):</label>
+            <select class="form-control" id="DCCN">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="VPCN">FACULTY (VPCN):</label>
+            <select style="padding-right: 700px;" class="form-control" id="VPCN">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="MPI">FACULTY (MPI):</label>
+            <select style="padding-right: 700px;" class="form-control" id="MPI">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="OE">FACULTY (OE):</label>
+            <select style="padding-right: 700px;" class="form-control" id="OE">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="PE">FACULTY (PE):</label>
+            <select style="margin-right: 1700px;" class="form-control" id="PE">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        <br><br>
+      <div style="margin-right: 700px;" class="form-group">
+        <label for="comment">Additional Feedback </label>
+        <textarea placeholder="Write Here" class="form-control" rows="3" id="Review"></textarea>
+      </div>
+      <br><br><br>
+<div>
+    <button style="margin-left: 20px;" class="btn btn-primary" onclick="rating()" id="rating">SUBMIT FEEDBACK</button>
+    <button style="margin-left: 50px;" class="btn btn-danger" onclick="hello()">RESET</button>
+</div>
+ </div>
+    <!--firebase-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>  
+        <script src="script3.js"></script>
+</body>
+</html>

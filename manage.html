@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Manage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="script1.js"></script>
+  <link rel="stylesheet" href="lstyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:90px;height:500px; background-color: #1E88E5;}
+  #section2 {padding-top:90px;height:500px; background-color: #673ab7;}
+  #section3 {padding-top:90px;height:500px; background-color: #ff9800;}
+  #section4 {padding-top:90px;height:500px; background-color: #1E88E5;}
+  #section5 {padding-top:90px;height:500px; background-color: #673ab7;}
+  #section6 {padding-top:90px;height:600px;  background-color: #ff9800;}
+  label{font-size: larger;color: aliceblue;}h1{color:aliceblue}
+  input:focus-within{
+    font-size: 30px;
+  }
+  </style>
+</head>
+<script>
+  $(window).on("load",function(){
+    $(".loader-wrapper").fadeOut("slow");
+  });
+</script>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+<nav class="navbar navbar-inverse navbar-fixed-top bg-primary">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <p style="font-size: 30px;">Welcome Admin</p> 
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Add Student</a></li>
+          <li><a href="#section2">Delete Student</a></li>
+          <li><a href="#section3">Update Student</a></li>
+          <li><a href="#section4">Add Faculty</a></li>
+          <li><a href="#section5">Delete Faculty</a></li>
+          <li><a href="#section6">Update Faculty</a></li>
+<li><button  onclick="signOut()" style=" margin-left: 500px; padding: 12px;" type="button" class="btn btn-primary"><i class="fa fa-sign-out" style="font-size:25px;float: right;color:whitesmoke"></i>Sign Out&emsp;</button></li>
+<li><button  onclick="test()" style=" margin-left: 70px; padding: 12px;" type="button" class="btn btn-primary"><i class="fa fa-plus" style="font-size:25px;float: left;color:whitesmoke"></i>&emsp;Add New Admin</button></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<br><br>
+<div id="section1" class="container-fluid">
+        <fieldset>
+          <h1>Add New Student</h1>
+        <label >Roll Number</label><br>
+        <input autocomplete="off" id="hno" type="text"><br>
+        <label >Name</label><br>
+        <input id="name" autocomplete="off" type="text"><br>
+        <label >Branch</label><br>
+        <input id="branch" autocomplete="off" type="text"><br>
+        <label >Year</label><br>
+        <input id="year" autocomplete="off" type="number"><br><br>
+        <button id="createuser" type="button" class="btn btn-primary" onclick="createUser()">Upload</button>&emsp;&emsp;<button id="Clear" type="button" class="btn btn-danger" onclick="Clear()">Clear</button>
+      </fieldset>
+      </div>
+<div id="section2" class="container-fluid">
+    <fieldset>
+        <h1>Delete Student</h1>
+      <label>Roll Number</label><br>
+      <input autocomplete="off" id="dlt" type="text"><br><br>
+      <button id="deleteuser" type="button" class="btn btn-primary" onclick="deleteaUser()">Delete</button>&emsp;&emsp;<button type="button" class="btn btn-danger" id="Clear" onclick="Clear()">Clear</button>
+    </fieldset>
+    <br>
+    <h2 style="color:antiquewhite;">Note:- If you want to delete all the student details at once directly press the delete button</h2>
+</div>
+<div id="section3" class="container-fluid">
+    <fieldset>
+        <h1>Update Student</h1>
+     <label >Roll Number</label><br>
+     <input autocomplete="off" id="hnon" type="text"><br>
+     <label >New Name</label><br>
+     <input autocomplete="off" id="namen" type="text"><br>
+     <label >New Branch</label><br>
+     <input autocomplete="off" id="branchn" type="text"><br>
+     <label >New Year</label><br>
+     <input autocomplete="off" id="yearn" type="number"><br><br>
+     <button id="updateuser" type="button" class="btn btn-primary" onclick="updateUser()">Update</button>&emsp;&emsp;<button type="button" class="btn btn-danger" id="Clear" onclick="Clear()">Clear</button>
+   </fieldset>
+</div>
+<div id="section4" class="container-fluid">
+    <fieldset>
+        <h1>Add Faculty</h1>
+        <label >Name</label><br>
+        <input type="email" id="fn" autocomplete="off"><br>
+        <label >Mail</label><br>
+        <input autocomplete="off" id="fec" type="email"><br>
+        <label>Subject</label><br>
+        <input type="text" id="fs" autocomplete="off">
+        <br><br>
+        <button id ="createfaculty" type="button" class="btn btn-primary" onclick="createFaculty()">Create</button>&emsp;&emsp;<button type="button" class="btn btn-danger" id="Clear" onclick="Clear()">Clear</button>
+      </fieldset>
+</div>
+<div id="section5" class="container-fluid">
+    <fieldset>
+        <h1>Delete Faculty</h1>
+        <label >Name</label><br>
+        <input autocomplete="off" id="fed" type="text"><br><br>
+        <button id="deletefaculty" type="button" class="btn btn-primary" onclick="deleteFaculty()">Delete</button>&emsp;&emsp;<button type="button" class="btn btn-danger" id="Clear" onclick="Clear()">Clear</button>
+      </fieldset><br>
+      <h2 style="color:antiquewhite;">Note:- If you want to delete all the faculty details at once directly press the delete button</h2>
+</div>
+<div id="section6" class="container-fluid">
+    <fieldset>
+        <h1>Update Faculty</h1>
+        <label >Name</label><br>
+        <input autocomplete="off" id="ref" type="text"><br>
+        <label >New Mail</label><br>
+        <input autocomplete="off" id="ne" type="email"><br>
+        <label >New Subject</label><br>
+        <input autocomplete="off" id="ns" type="text"><br><br>
+        <button id="updatefaculty" type="button" class="btn btn-primary" onclick="updateFaculty()">Update</button>&emsp;&emsp;<button type="button" class="btn btn-danger" id="Clear" onclick="Clear()">Clear</button>
+      </fieldset>
+</div>
+</body>
+</html>

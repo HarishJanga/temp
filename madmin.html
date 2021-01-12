@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Users-Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+ <script src="scriptma.js"></script>
+ <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="lstyles.css">
+</head>
+<script>
+    function Clear(){
+          location.reload();
+        }
+    function Back(){
+        window.location="manage.html";
+    }
+    $(window).on("load",function(){
+    $(".loader-wrapper").fadeOut("slow");
+  });
+</script>
+<style>
+   h1,label{color: antiquewhite;}
+   input:focus-within{font-size: 30px;}
+</style>
+<body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+    <div class="coantainer-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+            <a class="navbar-brand" href="#">Manage Admin Users</a>
+            </nav>
+            <br><br><br><br><br><br>
+            <h1 style="text-align: center;">Create New Admin User</h1>
+            </div>
+    <div class="container-fluid">
+    <fieldset>
+    <label style="font-size: larger;">New Admin Mail</label><br>
+    <input autocomplete="off" type="email" id="email" ><br>
+    <label style="font-size: larger;">New Admin Password</label><br>
+    <input autocomplete="off" type="password" id="password"><br><br>
+    <button style="margin-left: 10px;" type="button" class="btn btn-primary" onclick="myFunction()" id="singnUp">Create</button>&emsp;&emsp;<button id="Clear" type="button" class="btn btn-danger" onclick="Clear()">Clear</button>
+</fieldset>
+</div>
+
+<button style="margin-left: 500px; margin-top: 70px;" onclick="Back()" type="button" class="btn btn-primary">Go Back </button>
+</body>
+</html>

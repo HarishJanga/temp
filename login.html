@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="lstyle.css">
+    <link rel="stylesheet" href="lstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="http://example.com/favicon.png">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--firebase-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+         <script src="script.js"></script>
+         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+         <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <style>
+
+    .inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 19px 40px;
+}
+  </style>
+  <script>
+    $(window).on("load",function(){
+      $(".loader-wrapper").fadeOut("slow");
+    });
+  </script>
+<body>
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+    <div class="coantainer-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+            <a class="navbar-brand" href="index.html">C V R</a> 
+            <ul class="nav navbar">
+                <li class="nav-item" class="active"><a href="index.html" class="nav-link"><i class="fa fa-home"></i>&nbsp;HOME</a></li>
+                <li class="nav-item" class="active"><a href="about.html" class="nav-link"><i class="fa fa-info-circle"></i>&nbsp;ABOUT</a></li>
+                <li class="nav-item" class="active"><a href="contact.html" class="nav-link"><i class="fa fa-address-card"></i>&nbsp;CONTACT US</a></li>
+            </ul>
+        </nav> 
+    </div>
+<div style="padding-bottom: 300px;" class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <div id="formFooter">
+      <p class="text-primary" style="font-size: larger;">Admin-Login</p>
+    </div><br>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://www.w3schools.com/bootstrap4/img_avatar5.png" style="width: 300px;" id="icon" alt="User Icon" />
+    </div>
+<br>
+    <!-- Login Form -->
+    <div class="inputWithIcon">
+      <input autocomplete="off" autofocus="on" type="email" id="email" placeholder="E-Mail">
+      <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="color: rgb(80, 98, 255);"></i>
+    </div>
+    <div class="inputWithIcon">
+    <input autocomplete="off" type="password" id="password" placeholder="Password"><br><br>
+    <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="font-size: 30px; color: rgb(80, 98, 255);"></i>
+  </div>
+      <button style="padding: 10px;" type="button" class="btn btn-primary" onclick="signIn()" id="singnIn"><i class="fa fa-sign-out" style="font-size:25px;float: left;color:whitesmoke"></i>&emsp;Sign In</button><br>
+    <!-- Remind Passowrd -->
+    <br>
+
+  </div>
+</div>
+</body>
+</html>

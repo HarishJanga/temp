@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="fac.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="facs.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+</script>
+<body>
+  <body>
+    <div class="coantainer-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+          <h2 class="text-primary" id="wmsg">Hii Faculty</h2> 
+          <ul class="nav navbar">
+              <li><button  onclick="signOut()" style=" margin-left: 1220px; padding: 12px;" type="button" class="btn btn-primary"><i class="fa fa-sign-out" style="font-size:25px;float: right;color:whitesmoke"></i>Sign Out&emsp;</button></li>
+          </ul>
+          </nav> 
+  </div>
+    <div id="pie_chart"></div>
+<button class="btn btn-primary" id="dc" onclick="drawchart()">Generate Report</button>
+
+</body>
+</html>
